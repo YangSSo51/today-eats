@@ -1,41 +1,35 @@
 <template>
-  <div class="selector">
+  <div class="weather-selector">
     <button
-      v-for="w in weathers"
-      :key="w.id"
-      :class="{ active: modelValue === w.id }"
-      @click="$emit('update:modelValue', w.id)"
+      v-for="weather in weatherData"
+      :key="weather.id"
+      :class="{ selected: modelValue === weather.id }"
+      @click="$emit('update:modelValue', weather.id)"
     >
-      {{ w.name }}
+      {{ weather.name }}
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
-import type { Weather } from '../types/recommendation';
+import type { Weather } from '@/types/recommendation';
 
-defineProps({
-  weathers: { type: Array as PropType<Weather[]>, required: true },
-  modelValue: { type: Number, required: true },
-});
+defineProps<{
+  modelValue: number;
+  weatherData: Weather[];
+}>();
 </script>
 
 <style scoped>
-.selector {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 button {
-  padding: 8px 12px;
-  border-radius: 8px;
+  margin: 4px;
+  padding: 8px 16px;
+  border-radius: 6px;
   border: 1px solid #ccc;
   cursor: pointer;
 }
-button.active {
-  background-color: #89cff0;
-  font-weight: bold;
+button.selected {
+  background-color: #00bfff;
+  border-color: #1e90ff;
 }
 </style>

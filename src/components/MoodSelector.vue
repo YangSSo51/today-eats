@@ -1,36 +1,30 @@
 <template>
-  <div class="selector">
+  <div class="mood-selector">
     <button
-      v-for="m in moods"
-      :key="m.id"
-      :class="{ active: modelValue === m.id }"
-      @click="$emit('update:modelValue', m.id)"
+      v-for="mood in moodData"
+      :key="mood.id"
+      :class="{ active: modelValue === mood.id }"
+      @click="$emit('update:modelValue', mood.id)"
     >
-      {{ m.name }}
+      {{ mood.name }}
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
-import type { Mood } from '../types/recommendation';
+import type { Mood } from '@/types/recommendation';
 
-defineProps({
-  moods: { type: Array as PropType<Mood[]>, required: true },
-  modelValue: { type: Number, required: true },
-});
+defineProps<{
+  modelValue: number;
+  moodData: Mood[];
+}>();
 </script>
 
 <style scoped>
-.selector {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 button {
-  padding: 8px 12px;
-  border-radius: 8px;
+  margin: 4px;
+  padding: 8px 16px;
+  border-radius: 6px;
   border: 1px solid #ccc;
   cursor: pointer;
 }

@@ -4,12 +4,12 @@
 
     <section>
       <h3>기분을 선택하세요</h3>
-      <MoodSelector v-model="selectedMoodId" :moods="moods" />
+      <MoodSelector v-model="selectedMoodId" :moodData="moods" />
     </section>
 
     <section>
       <h3>날씨를 선택하세요</h3>
-      <WeatherSelector v-model="selectedWeatherId" :weathers="weathers" />
+      <WeatherSelector v-model="selectedWeatherId" :weatherData="weathers" />
     </section>
 
     <section>
@@ -21,18 +21,39 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useRecommendation } from './composables/useRecommendation';
-import MoodSelector from './components/MoodSelector.vue';
-import WeatherSelector from './components/WeatherSelector.vue';
-import FoodRecommendation from './components/FoodRecommendation.vue';
+import { useRecommendation } from '@/composables/useRecommendation';
+import MoodSelector from '@/components/MoodSelector.vue';
+import WeatherSelector from '@/components/WeatherSelector.vue';
+import FoodRecommendation from '@/components/FoodRecommendation.vue';
 
-const { moods, weathers, recommendFoods } = useRecommendation();
+import type {
+  Mood,
+  Weather,
+  Food,
+  FoodMoodWeight,
+  FoodWeatherWeight,
+} from '@/types/recommendation';
+
+import foodsData from '@/data/foods.json';
+import foodMoodWeightsData from '@/data/foodMoodWeights.json';
+import foodWeatherWeightsData from '@/data/foodWeatherWeights.json';
+import moodData from '@/data/Moods.json';
+import weatherData from '@/data/weathers.json';
+
+const moods = ref<Mood[]>(moodData as Mood[]);
+const weathers = ref<Weather[]>(weatherData as Weather[]);
 
 const selectedMoodId = ref<number>(moods.value[0].id);
 const selectedWeatherId = ref<number>(weathers.value[0].id);
 
 const recommendedFoods = computed(() =>
-  recommendFoods(selectedMoodId.value, selectedWeatherId.value)
+  useRecommendation(
+    selectedMoodId.value,
+    selectedWeatherId.value,
+    foodsData as Food[],
+    foodMoodWeightsData as FoodMoodWeight[],
+    foodWeatherWeightsData as FoodWeatherWeight[]
+  )
 );
 </script>
 

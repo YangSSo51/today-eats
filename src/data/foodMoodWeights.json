@@ -1,0 +1,22 @@
+[
+  { "foodId": 1, "moodId": 1, "weight": 5 },
+  { "foodId": 1, "moodId": 2, "weight": 2 },
+  { "foodId": 2, "moodId": 3, "weight": 1 },
+  { "foodId": 2, "moodId": 1, "weight": 4 },
+  { "foodId": 3, "moodId": 2, "weight": 3 },
+  { "foodId": 3, "moodId": 1, "weight": 5 },
+  { "foodId": 4, "moodId": 2, "weight": 2 },
+  { "foodId": 4, "moodId": 3, "weight": 1 },
+  { "foodId": 5, "moodId": 1, "weight": 4 },
+  { "foodId": 5, "moodId": 2, "weight": 3 },
+  { "foodId": 6, "moodId": 1, "weight": 5 },
+  { "foodId": 6, "moodId": 2, "weight": 2 },
+  { "foodId": 7, "moodId": 3, "weight": 1 },
+  { "foodId": 7, "moodId": 1, "weight": 4 },
+  { "foodId": 8, "moodId": 2, "weight": 3 },
+  { "foodId": 8, "moodId": 1, "weight": 5 },
+  { "foodId": 9, "moodId": 2, "weight": 2 },
+  { "foodId": 9, "moodId": 3, "weight": 1 },
+  { "foodId": 10, "moodId": 1, "weight": 4 },
+  { "foodId": 10, "moodId": 2, "weight": 3 }
+]

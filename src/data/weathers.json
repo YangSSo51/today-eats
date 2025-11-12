@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "맑음", "code": "sunny" },
+  { "id": 2, "name": "흐림", "code": "cloudy" },
+  { "id": 3, "name": "추움", "code": "cold" },
+  { "id": 4, "name": "더움", "code": "hot" },
+  { "id": 5, "name": "비", "code": "rainy" },
+  { "id": 6, "name": "눈", "code": "snowy" }
+]

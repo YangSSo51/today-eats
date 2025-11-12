@@ -1,14 +1,14 @@
 <template>
   <ul class="food-list">
     <li v-for="food in foods" :key="food.id">
-      <span v-if="food.total"> {{ food.name }} (점수: {{ food.total }})</span>
+      <span v-if="food.total"> {{ food.name }}</span>
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
 import { PropType } from 'vue';
-import type { Food } from '../types/recommendation';
+import type { Food } from '@/types/recommendation';
 
 defineProps({
   foods: { type: Array as PropType<Food[]>, required: true },
