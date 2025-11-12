@@ -1,13 +1,13 @@
 export interface Mood {
   id: number;
   name: string;
-  code: string;
+  icon: string;
 }
 
 export interface Weather {
   id: number;
   name: string;
-  code: string;
+  icon: string;
 }
 
 export interface FoodMoodWeight {

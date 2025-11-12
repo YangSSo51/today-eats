@@ -1,8 +1,9 @@
 [
-  { "id": 1, "name": "맑음", "code": "sunny" },
-  { "id": 2, "name": "흐림", "code": "cloudy" },
-  { "id": 3, "name": "추움", "code": "cold" },
-  { "id": 4, "name": "더움", "code": "hot" },
-  { "id": 5, "name": "비", "code": "rainy" },
-  { "id": 6, "name": "눈", "code": "snowy" }
+  { "id": 1, "name": "맑음", "icon": "☀️" },
+  { "id": 2, "name": "흐림", "icon": "☁️" },
+  { "id": 3, "name": "비", "icon": "🌧️" },
+  { "id": 4, "name": "눈", "icon": "❄️" },
+  { "id": 5, "name": "바람", "icon": "💨" },
+  { "id": 6, "name": "폭염", "icon": "🔥" },
+  { "id": 7, "name": "추움", "icon": "☃️" }
 ]

@@ -1,6 +1,9 @@
 [
-  { "id": 1, "name": "행복", "code": "happy" },
-  { "id": 2, "name": "슬픔", "code": "sad" },
-  { "id": 3, "name": "화남", "code": "angry" },
-  { "id": 4, "name": "피곤", "code": "tired" }
+  { "id": 1, "name": "행복", "icon": "😄" },
+  { "id": 2, "name": "슬픔", "icon": "😢" },
+  { "id": 3, "name": "스트레스", "icon": "😫" },
+  { "id": 4, "name": "피곤", "icon": "😴" },
+  { "id": 5, "name": "신남", "icon": "🤩" },
+  { "id": 6, "name": "우울", "icon": "😔" },
+  { "id": 7, "name": "화남", "icon": "😡" }
 ]

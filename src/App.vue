@@ -16,15 +16,20 @@
       <h3>추천 음식</h3>
       <FoodRecommendation :foods="recommendedFoods" />
     </section>
+    <button @click="view = 'admin'">관리자 모드</button>
+    <AdminDataManager v-if="view === 'admin'" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useRecommendation } from '@/composables/useRecommendation';
+import AdminDataManager from '@/components/AdminDataManager.vue';
+
 import MoodSelector from '@/components/MoodSelector.vue';
 import WeatherSelector from '@/components/WeatherSelector.vue';
 import FoodRecommendation from '@/components/FoodRecommendation.vue';
+const view = ref<'main' | 'admin'>('admin');
 
 import type {
   Mood,
