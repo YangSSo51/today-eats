@@ -37,7 +37,7 @@ import type {
 import foodsData from '@/data/foods.json';
 import foodMoodWeightsData from '@/data/foodMoodWeights.json';
 import foodWeatherWeightsData from '@/data/foodWeatherWeights.json';
-import moodData from '@/data/Moods.json';
+import moodData from '@/data/moods.json';
 import weatherData from '@/data/weathers.json';
 
 const moods = ref<Mood[]>(moodData as Mood[]);
