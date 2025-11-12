@@ -16,7 +16,13 @@
       <h3>추천 음식</h3>
       <FoodRecommendation :foods="recommendedFoods" />
     </section>
-    <button @click="view = 'admin'">관리자 모드</button>
+
+    <!-- 랜덤 추천 추가 -->
+    <section>
+      <RandomFoodSelector :foods="foods" />
+    </section>
+
+    <button v-if="false" @click="view = 'admin'">관리자 모드</button>
     <AdminDataManager v-if="view === 'admin'" />
   </div>
 </template>
@@ -25,11 +31,12 @@
 import { ref, computed } from 'vue';
 import { useRecommendation } from '@/composables/useRecommendation';
 import AdminDataManager from '@/components/AdminDataManager.vue';
+import RandomFoodSelector from '@/components/RandomFoodSelector.vue';
 
 import MoodSelector from '@/components/MoodSelector.vue';
 import WeatherSelector from '@/components/WeatherSelector.vue';
 import FoodRecommendation from '@/components/FoodRecommendation.vue';
-const view = ref<'main' | 'admin'>('admin');
+const view = ref<'main' | 'admin'>('main');
 
 import type {
   Mood,
@@ -45,6 +52,7 @@ import foodWeatherWeightsData from '@/data/foodWeatherWeights.json';
 import moodData from '@/data/moods.json';
 import weatherData from '@/data/weathers.json';
 
+const foods = ref(foodsData as Food[]);
 const moods = ref<Mood[]>(moodData as Mood[]);
 const weathers = ref<Weather[]>(weatherData as Weather[]);
 
