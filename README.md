@@ -19,3 +19,10 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### vercel 실행
+
+```sh
+npm i -g vercel
+vercel dev
+```
